@@ -11,11 +11,13 @@ _Estas instrucciones tambien estan disponibles en [espanol](./README.es.md)._
 
 **Before you start**: Read the [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project) guide before writing code.
 
+> We need you! These exercises are built and maintained in collaboration with people like you. If you find any bug 🐞 or typo, please contribute and/or report it.
+
 <!-- endhide -->
 
 ---
 
-## Your challenge
+## 🎯 Your challenge
 
 This repository is the starter template for the **Voice Command API** project.
 
@@ -83,7 +85,7 @@ voice-command-api/
 
 ---
 
-## How to start
+## 🌱 How to start the project
 
 You can open this project in [GitHub Codespaces](https://codespaces.new/4GeeksAcademy/voice-command-api) or clone it locally.
 
@@ -135,29 +137,11 @@ npm run dev
 
 ---
 
-## What you need to build
+## 💻 What you need to do
 
-### 1. Task storage in memory
-
-- Create a module-level `tasks` list
-- Each task must include `id`, `title`, and `done`
-- IDs must be unique and increment correctly
-
-### 2. Task endpoints
-
-- `GET /tasks` returns the full list
-- `POST /tasks` creates a task
-- `PUT /tasks/{task_id}` replaces a task
-- `PATCH /tasks/{task_id}` partially updates a task
-- `DELETE /tasks/{task_id}` removes a task
-
-### 3. Instruction endpoint
-
-Implement `POST /instruction` so it:
-
-- receives `{ "transcription": "..." }`
-- calls the Groq API
-- receives plain text and returns **only** a routing JSON object with this shape (no task execution):
+- [ ] Create a module-level `tasks` list with `id`, `title`, and `done`, using unique incremental IDs.
+- [ ] Implement `GET /tasks`, `POST /tasks`, `PUT /tasks/{task_id}`, `PATCH /tasks/{task_id}`, and `DELETE /tasks/{task_id}` using in-memory state.
+- [ ] Implement `POST /instruction` to receive `{ "transcription": "..." }`, call Groq, and return **only** routing JSON (no task execution):
 
 ```json
 {
@@ -167,17 +151,10 @@ Implement `POST /instruction` so it:
 }
 ```
 
-Do not hardcode intent matching with manual rules such as `if "add" in text`.
+- [ ] Implement `POST /transcribe` to accept `multipart/form-data`, convert audio to text, reuse `/instruction` logic, execute the selected action, and return `transcription`, `instruction`, and `result`.
+- [ ] Do not hardcode intent matching with manual rules such as `if "add" in text`.
 
-### 4. Transcription endpoint
-
-Implement `POST /transcribe` so it:
-
-- accepts `multipart/form-data` with an audio file
-- converts audio to text
-- reuses the same instruction-routing logic used by `/instruction`
-- executes the selected task action
-- returns:
+⚠️ **IMPORTANT:** The frontend does not resolve intents with Web Speech API. It only captures audio (up to 20 seconds), sends it to `POST /transcribe`, and shows backend transcription to debug STT vs. routing issues.
 
 ```json
 {
@@ -207,7 +184,7 @@ If the transcription is correct but the action is wrong, the problem is in `/ins
 
 ---
 
-## What we will evaluate
+## ✅ What we will evaluate
 
 - [ ] `POST /transcribe` accepts audio, transcribes it, and reuses `/instruction` routing logic.
 - [ ] `POST /instruction` receives plain text and returns only routing JSON (no action execution).
@@ -216,6 +193,15 @@ If the transcription is correct but the action is wrong, the problem is in `/ins
 
 ---
 
-## Contributors
+## 📦 How to submit this project
 
-This project was created by [@ehiber](https://github.com/ehiber) and [other contributors](https://github.com/4GeeksAcademy/voice-command-api/graphs/contributors) for [4Geeks Academy](https://4geeksacademy.com/). Find out more about our [AI Engineering](https://4geeksacademy.com/en/career-programs/ai-engineering), [Full-Stack Software Developer](https://4geeksacademy.com/en/career-programs/full-stack), [Data Science & Machine Learning](https://4geeksacademy.com/en/career-programs/data-science-ml), and [Cybersecurity](https://4geeksacademy.com/en/career-programs/cybersecurity) programs.
+1. Push your solution to your GitHub repository.
+2. Make sure backend and frontend are included and runnable locally.
+3. Share the repository URL and a short video/GIF showing:
+   - audio recording (20 seconds max),
+   - transcription visible in the frontend,
+   - correct task action execution.
+
+---
+
+This and many other projects are built by students as part of the [Coding Bootcamps](https://4geeksacademy.com/) at 4Geeks Academy. Learn more about the [Full-Stack Software Developer](https://4geeksacademy.com/en/career-programs/full-stack), [Data Science & Machine Learning](https://4geeksacademy.com/en/career-programs/data-science-ml), [Cybersecurity](https://4geeksacademy.com/en/career-programs/cybersecurity), and [AI Engineering](https://4geeksacademy.com/en/career-programs/ai-engineering) programs.

@@ -11,11 +11,13 @@ _These instructions are also available in [English](./README.md)._
 
 **Antes de empezar**: Lee la guia de [como comenzar un proyecto de programacion](https://4geeks.com/lesson/how-to-start-a-project) antes de escribir codigo.
 
+> ¡Te necesitamos! Estos ejercicios se construyen y mantienen en colaboracion con personas como tu. Si encuentras algun error 🐞 o falta de ortografia, por favor contribuye y/o reportalo.
+
 <!-- endhide -->
 
 ---
 
-## Tu reto
+## 🎯 Tu reto
 
 Este repositorio es el template inicial del proyecto **Voice Command API**.
 
@@ -83,7 +85,7 @@ voice-command-api/
 
 ---
 
-## Como empezar
+## 🌱 Como iniciar el proyecto
 
 Puedes abrir este proyecto en [GitHub Codespaces](https://codespaces.new/4GeeksAcademy/voice-command-api) o clonarlo localmente.
 
@@ -135,29 +137,11 @@ npm run dev
 
 ---
 
-## Que necesitas construir
+## 💻 Qué debes hacer
 
-### 1. Almacenamiento de tareas en memoria
-
-- Crea una lista `tasks` a nivel de modulo
-- Cada tarea debe incluir `id`, `title` y `done`
-- Los IDs deben ser unicos e incrementales
-
-### 2. Endpoints de tareas
-
-- `GET /tasks` devuelve la lista completa
-- `POST /tasks` crea una tarea
-- `PUT /tasks/{task_id}` reemplaza una tarea
-- `PATCH /tasks/{task_id}` actualiza una tarea parcialmente
-- `DELETE /tasks/{task_id}` elimina una tarea
-
-### 3. Endpoint de instrucciones
-
-Implementa `POST /instruction` para que:
-
-- reciba `{ "transcription": "..." }`
-- llame a la API de Groq
-- reciba texto plano y devuelva **solo** un JSON de routing con esta forma (sin ejecutar tareas):
+- [ ] Crea una lista `tasks` a nivel de modulo con `id`, `title` y `done`, usando IDs unicos e incrementales.
+- [ ] Implementa `GET /tasks`, `POST /tasks`, `PUT /tasks/{task_id}`, `PATCH /tasks/{task_id}` y `DELETE /tasks/{task_id}` con almacenamiento en memoria.
+- [ ] Implementa `POST /instruction` para recibir `{ "transcription": "..." }`, llamar a Groq y devolver **solo** JSON de routing (sin ejecutar tareas):
 
 ```json
 {
@@ -167,17 +151,10 @@ Implementa `POST /instruction` para que:
 }
 ```
 
-No hardcodees el routing con reglas manuales como `if "add" in text`.
+- [ ] Implementa `POST /transcribe` para aceptar `multipart/form-data`, convertir audio a texto, reutilizar la logica de `/instruction`, ejecutar la accion y devolver `transcription`, `instruction` y `result`.
+- [ ] No hardcodees el routing con reglas manuales como `if "add" in text`.
 
-### 4. Endpoint de transcripcion
-
-Implementa `POST /transcribe` para que:
-
-- acepte `multipart/form-data` con un archivo de audio
-- convierta el audio a texto
-- reutilice la misma logica de routing usada por `/instruction`
-- ejecute la accion elegida
-- devuelva:
+⚠️ **IMPORTANTE:** El frontend no decide intenciones con Web Speech API. Solo captura audio (hasta 20 segundos), envia a `POST /transcribe` y muestra la transcripcion del backend para depurar STT vs. routing.
 
 ```json
 {
@@ -207,7 +184,7 @@ Si la transcripcion esta bien pero la accion sale mal, el problema esta en `/ins
 
 ---
 
-## Que vamos a evaluar
+## ✅ Qué vamos a evaluar
 
 - [ ] `POST /transcribe` recibe audio, transcribe y reutiliza la logica de `/instruction`.
 - [ ] `POST /instruction` recibe texto plano y devuelve solo JSON de routing (sin ejecutar acciones).
@@ -216,6 +193,15 @@ Si la transcripcion esta bien pero la accion sale mal, el problema esta en `/ins
 
 ---
 
-## Contributors
+## 📦 Cómo entregar este proyecto
 
-Este proyecto fue creado por [@ehiber](https://github.com/ehiber) y [otros contribuidores](https://github.com/4GeeksAcademy/voice-command-api/graphs/contributors) para [4Geeks Academy](https://4geeksacademy.com/). Puedes conocer mas sobre nuestros programas de [AI Engineering](https://4geeksacademy.com/en/career-programs/ai-engineering), [Full-Stack Software Developer](https://4geeksacademy.com/en/career-programs/full-stack), [Data Science & Machine Learning](https://4geeksacademy.com/en/career-programs/data-science-ml) y [Cybersecurity](https://4geeksacademy.com/en/career-programs/cybersecurity).
+1. Sube tu solucion a tu repositorio de GitHub.
+2. Asegurate de incluir backend y frontend configurados para correr localmente.
+3. Comparte el enlace del repositorio y un breve video o GIF mostrando:
+   - grabacion de audio (20 segundos maximo),
+   - transcripcion visible en frontend,
+   - ejecucion correcta de acciones sobre tareas.
+
+---
+
+Este y muchos otros proyectos son construidos por estudiantes como parte de los [Coding Bootcamps](https://4geeksacademy.com/) de 4Geeks Academy. Encuentra mas acerca de los cursos de [Full-Stack Software Developer](https://4geeksacademy.com/es/programas-de-carrera/desarrollo-full-stack), [Data Science & Machine Learning](https://4geeksacademy.com/en/career-programs/data-science-ml), [Ciberseguridad](https://4geeksacademy.com/es/programas-de-carrera/ciberseguridad) e [Ingeniería de IA](https://4geeksacademy.com/es/programas-de-carrera/ingenieria-ia).
