@@ -2,7 +2,7 @@
 
 <!-- hide -->
 
-By [@4GeeksAcademy](https://github.com/4GeeksAcademy) and [other contributors](https://github.com/4GeeksAcademy/voice-command-api/graphs/contributors) at [4Geeks Academy](https://4geeksacademy.com/)
+By [@ehiber](https://github.com/ehiber) and [other contributors](https://github.com/4GeeksAcademy/voice-command-api/graphs/contributors) at [4Geeks Academy](https://4geeksacademy.com/)
 
 [![build by developers](https://img.shields.io/badge/build_by-Developers-blue)](https://4geeks.com)
 [![4Geeks Academy](https://img.shields.io/twitter/follow/4geeksacademy?style=social&logo=x)](https://x.com/4geeksacademy)
@@ -206,4 +206,4 @@ If the transcription is correct but the action is wrong, the problem is in `/ins
 
 ## Contributors
 
-This project is maintained by [4Geeks Academy](https://4geeksacademy.com/) and [other contributors](https://github.com/4GeeksAcademy/voice-command-api/graphs/contributors). Find out more about our [AI Engineering](https://4geeksacademy.com/en/career-programs/ai-engineering), [Full-Stack Software Developer](https://4geeksacademy.com/en/career-programs/full-stack), [Data Science & Machine Learning](https://4geeksacademy.com/en/career-programs/data-science-ml), and [Cybersecurity](https://4geeksacademy.com/en/career-programs/cybersecurity) programs.
+This project was created by [@ehiber](https://github.com/ehiber) and [other contributors](https://github.com/4GeeksAcademy/voice-command-api/graphs/contributors) for [4Geeks Academy](https://4geeksacademy.com/). Find out more about our [AI Engineering](https://4geeksacademy.com/en/career-programs/ai-engineering), [Full-Stack Software Developer](https://4geeksacademy.com/en/career-programs/full-stack), [Data Science & Machine Learning](https://4geeksacademy.com/en/career-programs/data-science-ml), and [Cybersecurity](https://4geeksacademy.com/en/career-programs/cybersecurity) programs.
