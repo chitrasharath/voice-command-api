@@ -28,6 +28,10 @@ The frontend is already built. It records up to **20 seconds** of audio in the b
 
 Your job is to implement the backend so the full voice-to-action flow works end to end.
 
+## Demo video
+
+Watch the app running end to end: [Voice Command API demo](https://www.loom.com/share/ffa94553121e470f8ac094c5898d1cc1)
+
 ---
 
 ## How the project works
